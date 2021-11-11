@@ -18,11 +18,19 @@ public class SearchListFragment extends Fragment {
     }
 
     RecyclerView recyclerView;
+    PlaceListRecyclerAdapter placeListRecyclerAdapter;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.recyclerview);
+
+        //MainActivity의 Place데이터들을 가져오기 위해 MainActivity를 참조
+        MainActivity ma = (MainActivity) getActivity();
+        if(ma.searchLocalApiResponse==null) return;
+
+        placeListRecyclerAdapter = new PlaceListRecyclerAdapter(getActivity(), ma.searchLocalApiResponse.documents);
+        recyclerView.setAdapter(placeListRecyclerAdapter);
     }
 }
