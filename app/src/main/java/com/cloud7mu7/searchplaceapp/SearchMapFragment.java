@@ -1,11 +1,13 @@
 package com.cloud7mu7.searchplaceapp;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class SearchMapFragment extends Fragment {
@@ -58,8 +61,20 @@ public class SearchMapFragment extends Fragment {
 
                     //마커 옵션 객체를 통해 마커의 설정
                     MarkerOptions options = new MarkerOptions().position(position).title(place.place_name).snippet(place.distance + "m");
-                    googleMap.addMarker(options);
+                    googleMap.addMarker(options).setTag(place.place_url);
                 }
+
+                //구글맵에게 마커의 정보창(infoWindow)을 클릭하는 것에 반응시키기
+                googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                    @Override
+                    public void onInfoWindowClick(@NonNull Marker marker) {
+                        //Toast.makeText(ma, ""+marker.getTag().toString(), Toast.LENGTH_SHORT).show();
+                        //장소Url의 웹문서를 사용자에게 보여주기 위해 새로운 액티비티로 전환
+                        Intent intent = new Intent(getActivity(), PlaceUrlActivity.class);
+                        intent.putExtra("place_url", marker.getTag().toString());
+                        startActivity(intent);
+                    }
+                });
 
             }
         });

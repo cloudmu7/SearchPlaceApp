@@ -25,9 +25,12 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:hint="검색 장소 입력"
+            android:textColorHint="#2587FF"
             android:gravity="center"
             android:textSize="12dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:inputType="text"
+            android:imeOptions="actionSearch"/>
 
     </androidx.appcompat.widget.Toolbar>
 

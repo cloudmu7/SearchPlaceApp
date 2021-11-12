@@ -11,8 +11,11 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Looper;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     //검색 결과 데이터를 가진 객체
     public SearchLocalApiResponse searchLocalApiResponse;
 
+    TabLayout tabLayout;
+
+    EditText etSearch;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.container, new SearchListFragment()).commit();
 
         //탭레이아웃의 탭버튼을 클릭하는 것을 처리
-        TabLayout tabLayout = findViewById(R.id.layout_tab);
+        tabLayout = findViewById(R.id.layout_tab);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -81,6 +88,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+
+        etSearch = findViewById(R.id.et_search);
+        //소프트키보드의 검색버튼(액션버튼)을 눌렀을때
+        etSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                //검색어 얻어오기
+                searchQuery = etSearch.getText().toString();
+                searchPlace();
+
+                return false;
             }
         });
 
@@ -132,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             //위치결과 객체로부터 내 위치 정보 얻기
             mylocation = locationResult.getLastLocation();
 
-            Toast.makeText(MainActivity.this, ""+mylocation.getLatitude(), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(MainActivity.this, ""+mylocation.getLatitude(), Toast.LENGTH_SHORT).show();
 
             //위치 얻어왔으니 더이상 업데이트x
             locationProviderClient.removeLocationUpdates(locationCallback);
@@ -160,6 +180,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //ListFragment가 먼저 보이도록..
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,new SearchListFragment()).commit();
+
+                //TabLayout을 List탭으로 변경
+                tabLayout.getTabAt(0).select();
+
 
 //                PlaceMeta meta = searchLocalApiResponse.meta;
 //                List<Place> documents = searchLocalApiResponse.documents;
@@ -200,13 +224,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.choice_01: searchQuery = "약국"; break;
             case R.id.choice_02: searchQuery = "서점"; break;
             case R.id.choice_03: searchQuery = "맛집"; break;
-            case R.id.choice_04: searchQuery = "영화관"; break;
-            case R.id.choice_05: searchQuery = "영화관"; break;
-            case R.id.choice_06: searchQuery = "영화관"; break;
-            case R.id.choice_07: searchQuery = "영화관"; break;
+            case R.id.choice_04: searchQuery = "학교"; break;
+            case R.id.choice_05: searchQuery = "세탁소"; break;
+            case R.id.choice_06: searchQuery = "마트"; break;
+            case R.id.choice_07: searchQuery = "카페"; break;
         }
 
         //검색 작업 요청
         searchPlace();
+
+        //editText의 글씨 제거
+        etSearch.setText("");
+        etSearch.clearFocus();
     }
 }

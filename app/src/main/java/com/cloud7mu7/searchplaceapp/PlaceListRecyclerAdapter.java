@@ -1,6 +1,7 @@
 package com.cloud7mu7.searchplaceapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +62,19 @@ public class PlaceListRecyclerAdapter extends RecyclerView.Adapter {
             tvPlaceName = itemView.findViewById(R.id.tv_place_name);
             tvAddress = itemView.findViewById(R.id.tv_address);
             tvDistance = itemView.findViewById(R.id.tv_distance);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //현재 클릭된 위치 번호 알 수 있음
+                    int index = getAdapterPosition();
+
+                    Intent intent = new Intent(context, PlaceUrlActivity.class);
+                    intent.putExtra("place_url",places.get(index).place_url);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

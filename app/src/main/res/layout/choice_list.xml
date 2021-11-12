@@ -14,7 +14,7 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_movie"
         android:layout_width="40dp"
@@ -24,7 +24,7 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_gas"
         android:layout_width="40dp"
@@ -34,7 +34,7 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_ev"
         android:layout_width="40dp"
@@ -44,76 +44,76 @@
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_01"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_medical_services_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_02"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_book_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_03"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_fastfood_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_04"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_school_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_05"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_local_laundry_service_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_06"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
     <ImageView
         android:id="@+id/choice_07"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_local_gas_station_24"
+        android:src="@drawable/ic_baseline_emoji_food_beverage_24"
         android:background="@drawable/bg_choice"
         android:padding="8dp"
         android:layout_margin="8dp"
         android:onClick="clickChoice"
-        app:tint="@color/black"/>
+        app:tint="#3FA4C3"/>
 
 </LinearLayout>
