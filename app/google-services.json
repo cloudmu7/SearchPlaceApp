@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "752403151374",
+    "project_id": "wherewego-1d6f8",
+    "storage_bucket": "wherewego-1d6f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752403151374:android:cefcc9480144ed6fccda5f",
+        "android_client_info": {
+          "package_name": "com.cloud7mu7.searchplaceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752403151374-dtf8tiudbtsesqbl2l3a64bic15iqjoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn6sVrnSpgW1_92fTFxEnT6OpnMWo7Ry8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752403151374-dtf8tiudbtsesqbl2l3a64bic15iqjoa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
